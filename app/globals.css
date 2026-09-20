@@ -1,0 +1,409 @@
+@import "tailwindcss";
+
+/* ============================================================
+   🎨 DESIGN SYSTEM — Digital Love Gift (High Visual Density)
+   ============================================================ */
+
+:root {
+  --color-navy-deep: #080811;
+  --color-maroon-deep: #380208;
+  --color-maroon-mid: #5a0914;
+  --color-maroon-light: #7c101e;
+  --color-cream: #f7eee1;
+  --color-white-paper: #fdfbf7;
+  --color-pink-neon: #ff2e88;
+  --color-pink-glow: rgba(255, 46, 136, 0.45);
+  --color-gold-accent: #dcb38a;
+  --color-pink-soft: #ffb8cd;
+
+  --font-script: var(--font-great-vibes), cursive;
+  --font-serif: var(--font-playfair-display), serif;
+  --font-body: var(--font-poppins), sans-serif;
+
+  --ease-elegant: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@theme inline {
+  --color-navy-deep: #080811;
+  --color-maroon-deep: #380208;
+  --color-maroon-mid: #5a0914;
+  --color-maroon-light: #7c101e;
+  --color-cream: #f7eee1;
+  --color-white-paper: #fdfbf7;
+  --color-pink-neon: #ff2e88;
+  --color-pink-glow: rgba(255, 46, 136, 0.45);
+  --color-gold-accent: #dcb38a;
+  --color-pink-soft: #ffb8cd;
+
+  --font-script: var(--font-great-vibes), cursive;
+  --font-serif: var(--font-playfair-display), serif;
+  --font-body: var(--font-poppins), sans-serif;
+
+  --ease-elegant: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-breathe: breathe 2.5s ease-in-out infinite;
+  --animate-spin-vinyl: spin-vinyl 3s linear infinite;
+  --animate-twinkle: twinkle 2s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 2.5s ease-in-out infinite;
+}
+
+/* ============================================================
+   🔑 KEYFRAMES
+   ============================================================ */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(2deg);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+@keyframes spin-vinyl {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px 4px rgba(255, 46, 136, 0.4),
+                0 0 35px 10px rgba(255, 46, 136, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px 8px rgba(255, 46, 136, 0.65),
+                0 0 60px 18px rgba(255, 46, 136, 0.35);
+  }
+}
+
+@keyframes spin-vinyl-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-cw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-ccw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-45deg) scale(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-400px) translateY(400px) rotate(-45deg) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Equalizer bar bounce (was referenced but never defined — fixed) */
+@keyframes equalizer-bounce {
+  0% {
+    height: 15%;
+  }
+  100% {
+    height: 95%;
+  }
+}
+
+/* Slow-drifting nebula clouds for the Galaxy scene background */
+@keyframes nebula-drift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-4%, 3%) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes nebula-drift-alt {
+  0% {
+    transform: translate(0, 0) scale(1.05);
+  }
+  50% {
+    transform: translate(5%, -4%) scale(1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1.05);
+  }
+}
+
+/* Core photo pulsing glow — Galaxy scene */
+@keyframes core-pulse-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 25px 8px rgba(255, 46, 136, 0.55),
+      0 0 60px 20px rgba(255, 46, 136, 0.3),
+      0 0 110px 40px rgba(220, 179, 138, 0.18);
+  }
+  50% {
+    box-shadow:
+      0 0 40px 14px rgba(255, 46, 136, 0.8),
+      0 0 90px 30px rgba(255, 46, 136, 0.45),
+      0 0 160px 55px rgba(220, 179, 138, 0.3);
+  }
+}
+
+/* ============================================================
+   📜 BASE & BACKGROUND LAYERS
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  background: var(--color-navy-deep);
+}
+
+body {
+  background: var(--color-navy-deep);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Deep space cosmic nebula overlay */
+.cosmic-nebula-bg {
+  background: radial-gradient(circle at 20% 30%, rgba(120, 10, 80, 0.25) 0%, transparent 50%),
+              radial-gradient(circle at 80% 70%, rgba(255, 46, 136, 0.18) 0%, transparent 60%),
+              radial-gradient(circle at 50% 50%, rgba(60, 5, 40, 0.3) 0%, transparent 70%),
+              var(--color-navy-deep);
+}
+
+/* Rich maroon vignette background */
+.maroon-vignette-bg {
+  background: radial-gradient(ellipse at center, var(--color-maroon-mid) 0%, var(--color-maroon-deep) 60%, #1a0105 100%);
+  background-attachment: fixed;
+}
+
+/* Authentic Lined Paper Journal Texture */
+.paper-texture-lined {
+  background-color: var(--color-white-paper);
+  background-image: 
+    linear-gradient(rgba(180, 150, 130, 0.15) 1px, transparent 1px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  background-size: 100% 32px, 160px 160px;
+  box-shadow: 
+    inset 0 0 60px rgba(180, 140, 100, 0.15),
+    0 25px 60px rgba(0, 0, 0, 0.6),
+    0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Heavy Neon Glow for Heart Silhouette */
+.neon-glow-heavy {
+  box-shadow: 
+    0 0 12px 3px rgba(255, 46, 136, 0.75),
+    0 0 28px 8px rgba(255, 46, 136, 0.45),
+    0 0 50px 15px rgba(255, 46, 136, 0.25);
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Scrapbook Polaroid Drop Shadow */
+.polaroid-realistic {
+  box-shadow: 
+    0 8px 25px -4px rgba(0, 0, 0, 0.45),
+    0 18px 45px 5px rgba(0, 0, 0, 0.35),
+    0 0 1px 1px rgba(255, 255, 255, 0.2) inset;
+  transition: transform 0.4s var(--ease-elegant), box-shadow 0.4s var(--ease-elegant), z-index 0.1s;
+}
+
+.polaroid-realistic:hover,
+.polaroid-realistic:active {
+  transform: rotate(0deg) scale(1.1) translateY(-10px) !important;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.65),
+    0 0 25px rgba(255, 46, 136, 0.35);
+  z-index: 40 !important;
+}
+
+/* Realistic Vinyl Grooves */
+.vinyl-grooves-dense {
+  background: repeating-radial-gradient(
+    circle,
+    #111116 0px,
+    #111116 2px,
+    #1c1c24 3px,
+    #0d0d12 4px
+  );
+  box-shadow: 
+    0 0 0 4px #1a1a24,
+    0 0 0 8px #0d0d14,
+    0 20px 60px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(255, 46, 136, 0.25);
+}
+
+/* Vintage Washi Tape */
+.washi-tape-strip {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(235, 205, 175, 0.75),
+    rgba(235, 205, 175, 0.75) 5px,
+    rgba(220, 185, 150, 0.5) 5px,
+    rgba(220, 185, 150, 0.5) 10px
+  );
+  backdrop-filter: blur(2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Equalizer Spectrum Bar */
+.eq-bar {
+  animation: equalizer-bounce 1s ease-in-out infinite alternate;
+}
+
+/* Responsive Headings */
+.text-hero-grand {
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+}
+
+.text-section-grand {
+  font-size: clamp(2rem, 5.5vw, 3.8rem);
+}
+
+/* ============================================================
+   🎵 CUSTOM RANGE SLIDER — Vinyl Progress Track
+   ============================================================ */
+.progress-track {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    var(--color-pink-neon) 0%,
+    var(--color-pink-neon) calc(var(--progress, 0) * 100%),
+    rgba(255, 255, 255, 0.15) calc(var(--progress, 0) * 100%),
+    rgba(255, 255, 255, 0.15) 100%
+  );
+  outline: none;
+}
+
+.progress-track::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid var(--color-pink-neon);
+  box-shadow: 0 0 12px rgba(255, 46, 136, 0.8);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.progress-track::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.progress-track::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid var(--color-pink-neon);
+  box-shadow: 0 0 12px rgba(255, 46, 136, 0.8);
+  cursor: pointer;
+}
+
+.progress-track::-moz-range-track {
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ============================================================
+   🌌 GALAXY MEMORY SCENE — Nebula, Orbit Frames, Lightbox
+   ============================================================ */
+.galaxy-nebula-a {
+  animation: nebula-drift 22s ease-in-out infinite;
+}
+
+.galaxy-nebula-b {
+  animation: nebula-drift-alt 28s ease-in-out infinite;
+}
+
+.galaxy-core-photo {
+  animation: core-pulse-glow 3.2s ease-in-out infinite;
+}
+
+.galaxy-orbit-frame {
+  box-shadow:
+    0 0 10px 2px rgba(255, 46, 136, 0.65),
+    0 0 22px 6px rgba(255, 46, 136, 0.35);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  will-change: transform;
+}
+
+.galaxy-orbit-frame:hover {
+  box-shadow:
+    0 0 20px 6px rgba(255, 46, 136, 0.9),
+    0 0 45px 14px rgba(255, 46, 136, 0.55);
+}
+
+.galaxy-shooting-star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.9);
+}
+
+.galaxy-shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 90px;
+  height: 1.5px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.9), transparent);
+  transform: translateY(-50%);
+}
