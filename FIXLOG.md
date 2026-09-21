@@ -54,6 +54,14 @@ Setelah menganalisis ulang kedua video referensi lebih detail, ditemukan dua ele
 - ✅ Diuji visual dengan Playwright pada intro: rain (0–1.8s) → nama "Michelle" ter-decode huruf demi huruf dan terbaca penuh & jelas (±2.7s) → transisi mulus ke countdown 3-2-1 yang sudah ada — dan pada surat cinta: doodle pasangan muncul tepat setelah tanda tangan & foto tempel sesuai urutan.
 
 
+## [Update 5] Memasukkan lagu "Everything" - The Black Skirts
+Lagu sebelumnya tidak pernah terputar karena dua masalah:
+
+1. **Nama file salah (ekstensi ganda).** File tersimpan sebagai `everything-the-black-skirts.mp3.mp3`, padahal `config/content.ts` (`song.src`) meminta `/audio/everything-the-black-skirts.mp3`. Ini biasa terjadi di Windows saat ekstensi file disembunyikan lalu file di-rename manual. Akibatnya Howler tidak menemukan file dan situs berjalan tanpa suara.
+2. **Isi file bukan MP3 asli.** File hasil unduhan ternyata AAC dalam wadah MP4/DASH yang hanya diganti nama jadi `.mp3`. Browser desktop kadang masih bisa memutarnya, tetapi Safari/iPhone sering gagal.
+
+**Perbaikan:** file dikonversi menjadi MP3 asli (192 kbps, 44.1 kHz, stereo, durasi 5:03), disimpan sebagai `public/audio/everything-the-black-skirts.mp3` (persis sama dengan `song.src`), dan file lama berekstensi ganda dihapus. Tidak ada perubahan kode.
+
 ## Cara menjalankan
 ```bash
 cd love-gift

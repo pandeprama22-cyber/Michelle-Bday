@@ -53,10 +53,12 @@ Semua file media disimpan di folder:
 | **Foto surat** | `public/photos/letter-photo.webp` | WebP / JPG |
 | **Galeri Polaroid** | `public/photos/gallery-1.webp` s/d `gallery-8.webp` | WebP / JPG foto momen berdua |
 | **Foto Favorit** | `public/photos/favorite.webp` | WebP / JPG foto close-up terbaik |
-| **Lagu MP3** | `public/audio/song.mp3` | MP3 lagu favorit kalian |
+| **Lagu MP3** | `public/audio/everything-the-black-skirts.mp3` | MP3 lagu "Everything" - The Black Skirts (nama file harus sama dengan `song.src` di `config/content.ts`) |
 | **Cover Vinyl** | `public/photos/vinyl-center.webp` | WebP / JPG foto kecil di tengah piringan |
 | **Galeri Hati** | `public/photos/heart-1.webp` s/d `heart-10.webp` | WebP / JPG 10 foto untuk siluet hati |
 | **Thumbnail WA** | `public/photos/og-thumbnail.webp` | Thumbnail untuk preview chat WA |
+
+> 🎵 **Lagu**: taruh file MP3 "Everything - The Black Skirts" ke folder `public/audio/` dengan nama persis `everything-the-black-skirts.mp3`. Kalau file belum ada, website tetap jalan tapi tanpa suara. Di Windows, pastikan ekstensi tidak jadi ganda (`.mp3.mp3`): aktifkan *View > File name extensions* di File Explorer untuk memeriksanya.
 
 > 💡 **Tips Konversi Foto**: Untuk menjaga performa HP tetap ringan dan lancar 60fps, gunakan format `.webp` atau kompres foto kamu di [squoosh.app](https://squoosh.app) atau [tinypng.com](https://tinypng.com) sebelum dimasukkan.
 
