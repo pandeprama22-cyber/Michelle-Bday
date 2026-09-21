@@ -61,7 +61,7 @@ export interface SiteContent {
   favoritePersonLocation: string;
   favoritePersonMedia: VideoConfig | { src: string; type: 'image' };
 
-  // --- Pemutar Musik Vinyl (Daniel Caesar - We Find Love) ---
+  // --- Pemutar Musik Vinyl (The Black Skirts - Everything) ---
   song: SongConfig;
 
   // --- Galaksi Kenangan (Rotating Multi-Ring Galaxy) ---
@@ -224,14 +224,14 @@ export const siteContent: SiteContent = {
     type: 'image' as const,
   },
 
-  // --- LAGU VINYL BARU: Daniel Caesar - Best Part ---
+  // --- LAGU VINYL: The Black Skirts - Everything ---
   song: {
-    src: '/audio/song.mp3',
-    title: 'Best Part',
-    artist: 'Daniel Caesar ft. H.E.R.',
-    album: 'Freudian (2017)',
-    genre: 'R&B / Neo-Soul',
-    reason: '“You’re the coffee that I need in the morning, you’re my sunshine in the rain when it’s pouring... If life is a movie, then you’re the best part.” Kamu selalu jadi bagian terbaik di setiap hariku.',
+    src: '/audio/everything-the-black-skirts.mp3',
+    title: 'Everything',
+    artist: 'The Black Skirts',
+    album: 'Team Baby (2017)',
+    genre: 'Indie Rock / Indie Pop',
+    reason: 'Judulnya cuma satu kata, tapi buat aku artinya pas banget: kamu adalah everything-ku. Setiap lagu ini diputar, aku ingat semua momen kita, dari puncak gunung sampai matahari terbit bareng kamu, dan aku makin yakin mau jalan sama kamu terus. Happy birthday, sayang.',
     coverSrc: '/photos/vinyl-center.webp',
   },
 
